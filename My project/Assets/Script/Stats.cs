@@ -2,22 +2,16 @@ using UnityEngine;
 
 public class Stats : ScriptableObject
 {
-
     public int level;
     public int maxHealth;
     public int currentHealth;
     public int attack;
     public int defense;
     public int experience;
+    public int velocity;
 
-    public Stats(int level, int maxHealth, int attack, int defense)
+    public Stats(int _velocity)
     {
-        this.level = level;
-        this.maxHealth = maxHealth;
-        this.currentHealth = maxHealth;
-        this.attack = attack;
-        this.defense = defense;
-        this.experience = 0;
+        velocity = _velocity; 
     }
-
 }
