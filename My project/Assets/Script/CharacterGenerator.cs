@@ -1,18 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using System.Linq;
 using UnityEngine;
 
 public class CharacterGenerator : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject enemyPrefab;
+    [SerializeField]
+    public int numberOfEnemies;
+
     void Start()
     {
-        
-    }
+        Debug.LogWarning("1");
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        var enemiesPositions = EnemyPositionManager.GetEnemyPositions().ToArray();
+
+        for (int i = 0; i < numberOfEnemies; i++)
+        {
+            Vector3 spawnPosition = enemiesPositions[i].Value;
+
+            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+        }
     }
 }

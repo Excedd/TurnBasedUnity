@@ -1,9 +1,19 @@
 using UnityEngine;
 
-public class Hero1 : MonoBehaviour
+public class Hero1 : MonoBehaviour, ITurnBasedCharacter
 {
     public CharacterData characterData;
     public AttackSkill attackSkill;
+
+    public string GetName()
+    {
+        return characterData.name;
+    }
+
+    public int GetVelocity()
+    {
+        return characterData.stats.velocity;
+    }
 
     void Start()
     {
