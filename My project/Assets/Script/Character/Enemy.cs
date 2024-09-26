@@ -3,7 +3,6 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public CharacterData characterData;
-    public AttackSkill attackSkill;
 
     void Start()
     {

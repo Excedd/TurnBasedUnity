@@ -7,8 +7,6 @@ public class TurnSystem : MonoBehaviour
 
     void Start()
     {
-        Debug.LogWarning("2");
-
         var listCharacters = GetComponents<ITurnBasedCharacter>(); 
         foreach (var character in listCharacters)
         {

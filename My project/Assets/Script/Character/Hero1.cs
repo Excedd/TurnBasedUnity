@@ -1,9 +1,11 @@
+using Assets.Script.Skills.Magic;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Hero1 : MonoBehaviour, ITurnBasedCharacter
 {
     public CharacterData characterData;
-    public AttackSkill attackSkill;
+    public IList<SkillBase> skills = new List<SkillBase>();
 
     public string GetName()
     {
@@ -17,9 +19,15 @@ public class Hero1 : MonoBehaviour, ITurnBasedCharacter
 
     void Start()
     {
-        if (characterData != null)
+        if (characterData == null)
         {
             characterData.stats = new(20);
+        }
+
+        if (skills == null)
+        {
+            skills.Add(ScriptableObject.CreateInstance<Fire>());
+            
         }
     }
 
