@@ -1,9 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Hero1 : MonoBehaviour, ITurnBasedCharacter
 {
     public CharacterData characterData;
-    public AttackSkill attackSkill;
+    public List<SkillBase> skills;
 
     public string GetName()
     {
