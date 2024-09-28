@@ -1,7 +1,8 @@
 using UnityEngine;
 
-public abstract class SkillBase : ScriptableObject
+public class SkillBase : ScriptableObject
 {
-    public string skillName;
-    public abstract void Execute(GameObject user);
+    protected string skillName;
+    protected int PhysicalDamage;
+    protected int MagicDamage;
 }
